@@ -6,9 +6,10 @@ RUN apt-get update && apt-get install -y \
     git unzip libzip-dev && \
     docker-php-ext-install zip pdo pdo_mysql
 
-COPY api/ .  # ⬅ Copy from the `api` subfolder
+COPY api/ .
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 RUN composer install || true
 
 EXPOSE 3000
