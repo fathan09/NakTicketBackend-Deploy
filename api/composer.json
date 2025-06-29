@@ -1,11 +1,5 @@
 {
     "require": {
-        "slim/slim": "^3.0",
-        "slim/psr7": "^1.5"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/"
-        }
+        "slim/slim": "3.*"
     }
 }
