@@ -10,7 +10,9 @@ COPY . .
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN [ -f "composer.json" ] && composer install || true
+# 🔧 Change to the API folder before installing dependencies
+WORKDIR /var/www/api
+RUN composer install || true
 
 EXPOSE 9000
 
