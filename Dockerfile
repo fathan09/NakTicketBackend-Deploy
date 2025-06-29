@@ -12,8 +12,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN [ -f "composer.json" ] && composer install || true
 
-EXPOSE 3000
+EXPOSE 9000
 
-CMD ["php", "-S", "0.0.0.0:3000", "-t", "/var/www/api"]
+CMD ["php", "-S", "0.0.0.0:9000", "-t", "/var/www/api"]
 
 
